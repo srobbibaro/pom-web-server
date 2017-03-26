@@ -1,0 +1,29 @@
+.form-group
+  .row
+    = label_tag nil, 'Notify recipient by:', class: 'col-md-5 control-label'
+    .col-md-7
+      .radio-inline
+        %label
+          = radio_button_tag 'notify_method', 'email', true
+          Email
+      .radio-inline
+        %label
+          = radio_button_tag 'notify_method', 'text', false
+          Text Message
+%div
+  .form-group.notify-email
+    .row
+      = label_tag :recipient_email, 'Email:', class: 'col-md-5 control-label'
+      .col-md-7
+        %input#recipient_email.location-input{:type => 'text', :placeholder => "Email address", class: 'form-control'}
+%div
+  .notify-mobile.form-group
+    .row
+      = label_tag :recipient_mobile, 'Mobile:', class: 'col-md-5 control-label'
+      .col-md-7
+        %input#recipient_mobile.location-input{:type => 'tel', :placeholder => "Mobile number", class: 'form-control'}
+  .notify-mobile.form-group
+    .row
+      = label_tag :carrier, 'Carrier:', class: 'col-md-5 control-label'
+      .col-md-7
+        = carrier_select_tag

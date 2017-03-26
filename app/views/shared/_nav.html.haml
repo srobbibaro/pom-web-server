@@ -1,0 +1,12 @@
+- if user_signed_in?
+  .nav-wrapper
+    .nav
+      = link_to current_user.email, user_edit_path
+      #{'|'}
+      = link_to 'preferences', user_edit_path
+      #{'|'}
+      %div{style: 'white-space: nowrap; display: inline-block'}
+        - if impersonating?
+          = link_to "halt impersonation", halt_impersonate_user_path, :method => 'post'
+        - else
+          = link_to "sign out", destroy_user_session_path, :method=>'delete'

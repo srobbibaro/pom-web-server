@@ -1,0 +1,27 @@
+.container-fluid.edit-user-content
+  .row
+    .col-md-12
+      .jumbotron
+        - if flash[:success]
+          = content_tag :div, flash[:success], class: 'alert alert-success'
+        .field
+          %h1 User Management
+        .table-responsive
+          %table{class: 'table table-striped'}
+            %thead
+              %tr.table-header
+                %th ID
+                %th Email
+                %th
+                %th
+            %tbody
+              - @users.each do |user|
+                %tr
+                  %td= user.id
+                  %td= link_to user.email, edit_user_path(user)
+                  %td= link_to image_tag("delete.png", border: "0"), user, :method=>'delete'
+                  %td= link_to 'impersonate', impersonate_user_path(user_id: user.id)
+        .field
+          = link_to "New User", new_user_path, class: 'btn btn-default btn-large'
+        .field
+          = link_to "cancel", root_path, class: 'btn btn-link'

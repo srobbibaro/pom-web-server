@@ -1,0 +1,47 @@
+= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&libraries=places"
+= javascript_include_tag 'arrival_schedule'
+.container-fluid.location-content
+  .row
+    .col-md-12
+      .jumbotron
+        = render partial: 'location_search'
+        .location-guidance{style: 'padding-top: 10px'}
+          Show your current location or search for an address. Then,
+          drag the pin to the "exact" spot where you would like to do a location
+          check. Finally, scroll down and click the "Check Location" button.
+        .location-item-spacer
+        = render partial: 'map'
+  .row
+    .col-md-6
+      .jumbotron.settings
+        = render partial: 'alert'
+        .row
+          = label_tag :name, '# of location checks:', class: 'col-md-5 control-label'
+          .col-md-7
+            %input#location_check_limit.location-input{:type => 'text', class: 'form-control'}
+        .row
+          .col-md-12
+            %button#fetch_location_checks{class: 'btn btn-default btn-large location-button'}
+              Reload location checks
+        .row
+          .col-md-12
+            %button#test{class: 'btn btn-default btn-large location-button'}
+              Check Location
+    .col-md-6
+      .jumbotron.settings
+        = render partial: 'saved_locations'
+  .row
+    .col-md-12
+      .jumbotron
+        .recent-checks
+          %table{class: 'table table-striped'}
+            %thead
+              %tr.table-header
+                %th ID
+                %th longitude
+                %th latitude
+                %th date
+                %th matches
+                %th test?
+            %tbody
+= render partial: 'delete_location_modal'

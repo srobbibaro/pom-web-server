@@ -1,0 +1,30 @@
+.container-fluid.edit-user-content
+  .row
+    .col-md-12
+      .jumbotron
+        .field
+          %h1 Create New User
+        .edit-entry
+          - if @user && @user.errors.keys.length > 0
+            %div{class: 'alert alert-danger'}
+              Please fix the following errors:
+              %ul.error-list
+                - @user.errors.each do |k,v|
+                  %li= v
+          = form_for(:user, url: user_index_path, role: 'form') do |f|
+            .form-group
+              = f.label :email
+              %br
+              = f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control edit-user-input'
+            .form-group
+              = f.label :display_name
+              %br
+              = f.text_field :display_name, placeholder: 'Display name (optional)', class: 'form-control edit-user-input'
+            .form-group
+              = f.label :new_password
+              %br
+              = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control edit-user-input'
+            .form-group.field
+              = f.submit "Create", class: 'btn btn-default btn-large'
+            .form-group.field
+              = link_to "cancel", user_index_path, class: 'btn btn-link'

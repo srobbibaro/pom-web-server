@@ -1,0 +1,27 @@
+.container-fluid.edit-user-content
+  .row
+    .col-md-12
+      .jumbotron
+        .field
+          %h1 Recent Location Checks
+        .table-responsive
+          %table{class: 'table table-striped'}
+            %thead
+              %tr.table-header
+                %th ID
+                %th user
+                %th longitude
+                %th latitude
+                %th date
+                %th matches
+                %th test?
+            %tbody
+              - @notifications.each do |notification|
+                %tr
+                  %td= notification[:id]
+                  %td= link_to notification[:user].email, edit_user_path(notification[:user])
+                  %td= notification[:longitude]
+                  %td= notification[:latitude]
+                  %td= notification[:date]
+                  %td= notification[:matches]
+                  %td= notification[:test]

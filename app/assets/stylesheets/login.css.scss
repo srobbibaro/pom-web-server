@@ -1,0 +1,82 @@
+.login-entry {
+  width: 280px;
+  margin: 0 auto;
+  float: right;
+}
+
+.login-container {
+  padding-top: 50px;
+}
+
+.login-input {
+  font-size: 1.1em;
+  max-width: 300px;
+}
+
+.field {
+  padding-top: 0;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+.title {
+  font-size: 6.0em;
+  margin-top: 0;
+  color: #3c7b3b;
+}
+
+.login {
+  .jumbotron {
+    margin: 20px 0 20px;
+    background-color: $primary-background-color;
+    border: 1px $border-color solid;
+    border-radius: 10px;
+    padding: 10px;
+    h3 {
+      margin-top: 5px;
+      margin-bottom: 25px;
+    }
+    .text {
+      font-size: 1.7em;
+      padding: 0 5px 5px 0;
+    }
+    .button {
+      width: 100%;
+      max-width: 300px;
+      height: 45px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  .login-entry {
+    width: 100%;
+  }
+
+  .login-container {
+    padding-top: 10px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
+
+  .login {
+    .jumbotron {
+      margin: 10px 0 10px;
+    }
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  .title {
+    font-size: 5.0em;
+  }
+}
+
+@media only screen and (max-width : 420px) {
+  .title {
+    font-size: 3.75em;
+  }
+}

@@ -1,0 +1,23 @@
+= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&libraries=places"
+= javascript_include_tag 'arrival_schedule'
+.container-fluid.location-content
+  .row
+    .col-md-12
+      .jumbotron
+        = render partial: 'location_search'
+        .location-guidance{style: 'padding-top: 10px'}
+          Automatically get your current location or search for a location name or street address.
+          Then, drag the icon to the "exact" spot from which you want the
+          notification to be sent. Finally, scroll down and enter the location's
+          settings.
+        .location-item-spacer
+        = render partial: 'map'
+  .row
+    .col-md-6
+      .jumbotron.settings.left
+        = render partial: 'alert'
+        = render partial: 'location_edit_form'
+    .col-md-6
+      .jumbotron.settings.right
+        = render partial: 'saved_locations'
+= render partial: 'delete_location_modal'

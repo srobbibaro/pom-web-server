@@ -1,0 +1,12 @@
+- if user_signed_in? && current_user.admin?
+  .admin-nav-wrapper
+    .nav
+      = link_to 'Users', user_index_path
+      #{'|'}
+      = link_to 'Testing', arrival_schedule_check_location_test_path
+      #{'|'}
+      = link_to 'Advanced', arrival_schedule_index_path(radius: 1)
+      #{'|'}
+      = link_to 'OAuth', oauth_applications_path
+      #{'|'}
+      = link_to 'Recent Location Checks', notifications_index_path

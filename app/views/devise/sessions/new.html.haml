@@ -1,0 +1,22 @@
+.container.login
+  .row
+    .col-md-8
+      .title.login-container
+        Pom Web Server
+    .col-md-4
+      .jumbotron.login-entry
+        - if flash[:alert] and flash_message_class == 'alert error'
+          = content_tag :div, flash[:alert], class: 'alert alert-danger'
+        .text Sign in
+        = form_for(resource, as: resource_name, url: session_path(resource_name), role: 'form') do |f|
+          .form-group.field
+            = f.email_field :email, autofocus: true, placeholder: 'Email', class: 'form-control login-input'
+          .form-group.field
+            = f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control login-input'
+          .field
+            = f.submit "Continue", class: 'btn btn-default button'
+  .row
+    .col-md-12
+      .jumbotron
+        %h3
+          Using the Google Maps API, select the locations where you'd like to notify friends when you arrive.

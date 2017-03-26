@@ -1,0 +1,103 @@
+$border-color: #CBBE95;
+
+.saved-location {
+  cursor: pointer;
+}
+
+.saved-locations {
+  display: none;
+}
+
+.remove-location {
+  cursor: pointer;
+}
+
+.location {
+  font-size: 1.0em;
+  vertical-align: middle;
+}
+
+.location-table-cell-fixed {
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.location-button {
+  cursor: pointer;
+  width: 170px;
+}
+
+.location-input {
+  width: 235px;
+}
+
+.location-input-search {
+  min-width: 200px;
+}
+
+.location-item-spacer {
+  border-top: 1px solid $border-color;
+  margin-top: 15px;
+  padding-top: 15px;
+}
+
+.location-map {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.location-map-canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.no-saved-locations {
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.location-guidance {
+  font-size: .95em;
+  font-style: italic;
+}
+
+.location-content {
+  .jumbotron {
+    margin: 10px 0 10px;
+    background-color: $primary-background-color;
+    border: 1px $border-color solid;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 60px;
+    .field {
+      padding-top: 0;
+      text-align: center;
+    }
+  }
+
+  .jumbotron.settings.right {
+    margin: 0 0 10px -10px;
+  }
+
+  .jumbotron.settings.left {
+    margin: 0 -10px 10px 0;
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  .location-content {
+    .jumbotron.settings.right {
+      margin: 0 0 10px 0;
+    }
+    .jumbotron.settings.left {
+      margin: 0 0 10px 0;
+    }
+  }
+}

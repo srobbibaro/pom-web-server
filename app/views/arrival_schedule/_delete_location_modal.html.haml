@@ -1,0 +1,10 @@
+.modal.fade{id: 'delete_location_modal', tabindex: '-1', role: 'dialog', :'aria-labelledby' => 'Delete location?'}
+  .modal-dialog{role: 'document'}
+    .modal-content
+      .modal-header
+        %h4{class: "modal-title"} Delete location?
+      .modal-body
+        %p Are you sure you'd like to delete this location?
+      .modal-footer
+        %button{type: "button", class: "btn btn-default", :'data-dismiss' => "modal"} Cancel
+        %button{type: "button", class: "btn btn-danger", id: 'delete_location_confirm'} Delete

@@ -1,0 +1,10 @@
+.row
+  .col-md-3
+    .row
+      .col-md-10
+        %button#fetch{class: 'btn btn-default btn-large location-button'}
+          Get My Location
+      .col-md-1
+        %div{style: 'font-size: 1.5em'} or
+  .col-md-9
+    %input#search_text{class: 'form-control location-input-search', :type => 'text', :placeholder => "Enter a location name or address..."}

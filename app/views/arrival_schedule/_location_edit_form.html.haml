@@ -1,0 +1,37 @@
+.form-group
+  .row
+    = label_tag :name, 'Location name:', class: 'col-md-5 control-label'
+    .col-md-7
+      %input#name.location-input{:type => 'text', class: 'form-control'}
+.form-group
+  .row
+    = label_tag nil, 'Turn location on?', class: 'col-md-5 control-label'
+    .col-md-7
+      .radio-inline
+        %label
+          = radio_button_tag 'active', '1', false
+          Yes
+      .radio-inline
+        %label
+          = radio_button_tag 'active', '0', true
+          No
+.location-guidance
+  Turning a location on means that notifications will be sent to the
+  specified recipient(s).
+.location-item-spacer
+.location-guidance{style: 'padding-bottom: 10px'}
+  You can notify up to four recipients, and each button below corresponds to a
+  single recipient.
+.form-group
+  .row
+    = label_tag :name, 'Recipient number:', class: 'col-md-5 control-label'
+    .col-md-7
+      .btn-group.btn-group-lg{role: 'group'}
+        - for i in 1..4
+          %button{type: 'button', class: "btn btn-default recipient-button#{' active' if i == 1}", :'data-id' => "#{i}", id: "recipient-#{i}"}
+            = i
+.recipient-form{style: 'padding-top: 10px'}
+  = render partial: 'location_recipient_edit_form'
+.location-item-spacer
+  %button#save{class: 'btn btn-default btn-large location-button'}
+    Save These Settings

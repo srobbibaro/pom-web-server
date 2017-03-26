@@ -1,0 +1,79 @@
+$primary-font-color: #34799C;
+$primary-background-color: #E4E4D6;
+$section-background-color: #F2F2E8;
+$border-color: #CBBE95;
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: $primary-font-color;
+}
+
+body {
+  color: $primary-font-color;
+  background-color: $section-background-color;
+}
+
+.content {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: block;
+  min-height: 400px;
+}
+
+.nav-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: $primary-background-color;
+  border-bottom: 1px $border-color solid;
+  .nav {
+    font-size: 1.25em;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+
+.admin-nav-wrapper {
+  @extend .nav-wrapper;
+  background-color: #FFDDAA;
+}
+
+h2 {
+  padding: 5px 0;
+  margin: 0;
+}
+
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+  background-color: $section-background-color;
+}
+.table-striped>tbody>tr>td.selected {
+  background-color: #9D9;
+}
+
+.table-header {
+  background-color: #DDC;
+}
+
+.alert {
+  font-size: 1.2em;
+  font-family: Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-default {
+  background-color: #EEE;
+}
