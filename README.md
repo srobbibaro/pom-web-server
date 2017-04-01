@@ -33,28 +33,6 @@ file.
 
 Run any migrations: `$ rake db:migrate`
 
-Install Heroku Tool Belt:
-
-```bash
-$ brew install heroku
-```
-
-Authenticate:
-
-```bash
-$ heroku login
-```
-
-Setup Heroku remote for deploying:
-
-```bash
-$ heroku git:remote --app pom-web-server
-```
-
-Note: Pushing to `heroku/master` will deploy to productions, so use caution!
-
-### Running Local Development Server
-
 Ensure that the following variables are set in your `./.env` file:
 
 _none at this time_
